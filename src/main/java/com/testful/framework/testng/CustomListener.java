@@ -1,4 +1,4 @@
-package com.test;
+package com.testful.framework.testng;
 
 import org.testng.IInvokedMethod;
 import org.testng.ITestResult;
@@ -25,5 +25,24 @@ public class CustomListener extends CustomInvokedMethodListener {
 
 		}
 	}
+	
+//	Reporter.setCurrentTestResult(result);
+//	if (method.isTestMethod()) {
+//		TestStatus testStatus = TestValidation.getInstance().getTestStatus();
+//		RetryAnalyzer retryAnalyzer =(RetryAnalyzer) method.getTestMethod().getRetryAnalyzer();
+//		if(testStatus == TestStatus.PASS) {
+//			retryAnalyzer.setTestPassed(true);
+//		}
+//		if(testStatus == TestStatus.FAIL) {
+//			retryAnalyzer.setTestPassed(false);
+//		}
+//		int currentCount = retryAnalyzer.getCurrentCount();
+//		//if there are verification failures...
+//		if (testStatus == TestStatus.FAIL && currentCount >= RetryAnalyzer.maxRetryCount) {
+//			String testFailurePoints 	= TestValidation.getInstance().getTestFailurePoints();
+//			result.setStatus(ITestResult.FAILURE);
+//			result.setThrowable(new Exception(testFailurePoints));
+//		}
+//	}
 
 }

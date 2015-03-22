@@ -1,4 +1,4 @@
-package com.test;
+package com.testful.framework.testng;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;

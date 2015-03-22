@@ -1,4 +1,4 @@
-package com.test;
+package com.testful.framework.base;
 
 import java.lang.reflect.Method;
 
@@ -10,13 +10,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
-@Listeners({ com.test.CustomListener.class,
-		com.test.CustomInvokedMethodListener.class,
-		com.test.CustomTestListener.class })
+import com.testful.framework.testng.IncludesTestName;
+
+@Listeners({ com.testful.framework.testng.CustomListener.class,
+		com.testful.framework.testng.CustomInvokedMethodListener.class,
+		com.testful.framework.testng.CustomTestListener.class})
 public class SimpleTestBase {
 	protected static Logger logger = LogManager.getLogger();
 
-	protected static String testName = "";
+	private static String testName = "";
 	protected Level step = Level.valueOf("STEP");
 
 	protected void step(String msg) {
@@ -44,6 +46,7 @@ public class SimpleTestBase {
 			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  "
 					+ e.getMessage());
 		}
+		
 	}
 
 	@BeforeClass(alwaysRun = true)
@@ -63,8 +66,16 @@ public class SimpleTestBase {
 		if (useAsTestName != null && parameters.length > 0) {
 			testCaseName += "-" + (String) parameters[useAsTestName.idx()];
 		}
-		testName = testCaseName;
+		setTestName(testCaseName);
 		step("Method - " + testCaseName);
+	}
+
+	public static String getTestName() {
+		return testName;
+	}
+
+	public static void setTestName(String test) {
+		testName = test;
 	}
 
 }

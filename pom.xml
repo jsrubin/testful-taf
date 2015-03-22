@@ -47,6 +47,9 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+          <includes>
+            <include>**/*Test*.java</include>
+          </includes>
 			-->		
 			
 			<systemPropertyVariables>

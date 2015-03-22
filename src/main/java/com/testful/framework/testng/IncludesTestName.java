@@ -1,4 +1,4 @@
-package com.test;
+package com.testful.framework.testng;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
