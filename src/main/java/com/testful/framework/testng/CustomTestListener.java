@@ -5,13 +5,14 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-import com.testful.framework.suite.SimpleTest;
+import com.testful.framework.base.SimpleTestBase;
+import com.testful.framework.testng.CustomRetryAnalyzer;
 
 public class CustomTestListener implements ITestListener {
 	private static String testName = "";
 
 	private void setLocalTestName() {
-		testName = SimpleTest.getTestName();
+		testName = SimpleTestBase.getTestName();
 	}
 
 	@Override
